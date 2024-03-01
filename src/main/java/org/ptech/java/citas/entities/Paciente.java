@@ -2,31 +2,32 @@ package org.ptech.java.citas.entities;
 
 import java.time.LocalDate;
 
-public class Paciente {
-   private int id;
-   private String nombres;
-   private String apéllidos;
-   private tipoDocumento tipoIdentificacion;
-   private Long numeroIdentificacion;
-   private String email;
-   private Long celular;
-   private LocalDate fechaNacimiento;
-   private Double altura;
-   private Double peso;
-   private TipoSangre tipoSangre;
-   private char factorRH;
+import org.ptech.java.citas.entities.enums.TipoSangre;
+import org.ptech.java.citas.entities.enums.tipoDocumento;
 
-    public Paciente() {
-    }
+public class Paciente extends Usuario {
+    private String email;
+    private Long celular;
+    private LocalDate fechaNacimiento;
+    private Double altura;
+    private Double peso;
+    private TipoSangre tipoSangre;
+    private char factorRH;
 
-    public Paciente(int id, String nombres, String apéllidos, tipoDocumento tipoIdentificacion,
-            Long numeroIdentificacion, String email, Long celular, LocalDate fechaNacimiento, Double altura,
-            Double peso, TipoSangre tipoSangre, char factorRH) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apéllidos = apéllidos;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.numeroIdentificacion = numeroIdentificacion;
+    public Paciente(int id,
+            String nombres,
+            String apéllidos,
+            tipoDocumento tipoIdentificacion,
+            Long numeroIdentificacion,
+            String email,
+            Long celular,
+            LocalDate fechaNacimiento,
+            Double altura,
+            Double peso,
+            TipoSangre tipoSangre,
+            char factorRH) {
+
+        super(id, nombres, apéllidos, tipoIdentificacion, numeroIdentificacion);
         this.email = email;
         this.celular = celular;
         this.fechaNacimiento = fechaNacimiento;
@@ -34,46 +35,6 @@ public class Paciente {
         this.peso = peso;
         this.tipoSangre = tipoSangre;
         this.factorRH = factorRH;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApéllidos() {
-        return apéllidos;
-    }
-
-    public void setApéllidos(String apéllidos) {
-        this.apéllidos = apéllidos;
-    }
-
-    public tipoDocumento getTipoIdentificacion() {
-        return tipoIdentificacion;
-    }
-
-    public void setTipoIdentificacion(tipoDocumento tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
-    }
-
-    public Long getNumeroIdentificacion() {
-        return numeroIdentificacion;
-    }
-
-    public void setNumeroIdentificacion(Long numeroIdentificacion) {
-        this.numeroIdentificacion = numeroIdentificacion;
     }
 
     public String getEmail() {
