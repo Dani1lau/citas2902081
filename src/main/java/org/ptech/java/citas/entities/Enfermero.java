@@ -14,6 +14,7 @@ public class Enfermero extends Usuario {
             String apéllidos,
             tipoDocumento tipoIdentificacion,
             Long numeroIdentificacion) {
+                
                 //1. llamar al constructor de
                 //la superclase
         super(id,
@@ -25,6 +26,11 @@ public class Enfermero extends Usuario {
                 //intrinsecos del objeto
 
                 this.procedimientos = new ArrayList<String>();
+    }
+
+    @Override
+    public String toString() {
+        return "Enfermero [procedimientos=" + procedimientos + "]" + super.id + super.nombres + super.apéllidos;
     }
 
     public void addProcedure(String procedure) {

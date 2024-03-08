@@ -5,24 +5,17 @@ import java.time.LocalDateTime;
 import org.ptech.java.citas.entities.enums.EstadoCita;
 
 public class Citas {
-   private int id;
-   private LocalDateTime fecha;
-   private Medico medico;
-   private Paciente paciente;
-   private Consultorio consultorio;
-   private EstadoCita estado;
+    int id;
+    LocalDateTime fecha;
+    Consultorio consultorio;
+    Paciente paciente;
 
-    public Citas() {
-    }
-
-    public Citas(int id, LocalDateTime fecha, Medico medico, Paciente paciente, Consultorio consultorio,
-            EstadoCita estado) {
+    public Citas(int id, LocalDateTime fecha, Paciente paciente, Consultorio consultorio) {
         this.id = id;
         this.fecha = fecha;
-        this.medico = medico;
-        this.paciente = paciente;
         this.consultorio = consultorio;
-        this.estado = estado;
+        this.paciente = paciente;
+
     }
 
     public int getId() {
@@ -41,22 +34,6 @@ public class Citas {
         this.fecha = fecha;
     }
 
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
     public Consultorio getConsultorio() {
         return consultorio;
     }
@@ -65,12 +42,12 @@ public class Citas {
         this.consultorio = consultorio;
     }
 
-    public EstadoCita getEstado() {
-        return estado;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setEstado(EstadoCita estado) {
-        this.estado = estado;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     
