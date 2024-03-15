@@ -5,26 +5,27 @@ import java.time.LocalDateTime;
 import org.ptech.java.citas.entities.enums.EstadoCita;
 import org.ptech.java.citas.interfaces.IAgendable;
 
-public class CitaMedico extends Citas implements IAgendable {
-
-    Medico medico;
+public class CitaEnfermero extends Citas implements IAgendable{
+    Enfermero enfermero;
     EstadoCita estado;
-    private String motivoCita;
+    String motivoCita;
+    
 
-    public CitaMedico(int id, LocalDateTime fecha, Paciente paciente, Consultorio consultorio, Medico medico,
+
+    public CitaEnfermero(int id, LocalDateTime fecha, Paciente paciente, Consultorio consultorio, Enfermero enfermero,
             EstadoCita estado, String motivoCita) {
         super(id, fecha, paciente, consultorio);
-        this.medico = medico;
+        this.enfermero = enfermero;
         this.estado = estado;
         this.motivoCita = motivoCita;
     }
 
-    public Medico getMedico() {
-        return medico;
+    public Enfermero getEnfermero() {
+        return enfermero;
     }
 
-    public void setMedico(Medico medico) {
-        this.medico = medico;
+    public void setEnfermero(Enfermero enfermero) {
+        this.enfermero = enfermero;
     }
 
     public EstadoCita getEstado() {
@@ -34,26 +35,19 @@ public class CitaMedico extends Citas implements IAgendable {
     public void setEstado(EstadoCita estado) {
         this.estado = estado;
     }
-    public String getmotivoCita() {
-        return motivoCita;
-    }
 
-    public void setmotivoCita(String motivoCita) {
-        this.motivoCita = motivoCita;
-    }
-
-
-    @Override
-    public boolean agendarCita(LocalDateTime fecha,
-            Consultorio c) {
+     @Override
+    public boolean agendarCita(LocalDateTime fecha, 
+                                Consultorio c) {
         this.setFecha(fecha);
         this.setConsultorio(c);
         return true;
     }
 
+
     @Override
-    public boolean reAgendarCita(LocalDateTime nuevaFecha,
-            Consultorio nuevoC) {
+    public boolean reAgendarCita(LocalDateTime nuevaFecha, 
+                                Consultorio nuevoC) {
         this.setFecha(nuevaFecha);
         this.setConsultorio(nuevoC);
         return true;
